@@ -1,0 +1,39 @@
+[  
+        {
+            "id": 1,
+            "wheelname": "Blitz Type-03",
+            "description": "5x114.3 | 18x8 +45",
+            "image": "/assets/resources/Wheels/Blitz_03_5x114.3_-_18x8_+45.jpg",
+            "price": 14249.50
+        }
+        ,
+        {
+            "id": 2,
+            "wheelname": "SSR 03",
+            "description": "5x114.3 | 18x8 +45",
+            "image": "/assets/resources/Wheels/Blitz_Technospeed_Z1_5x100_17x7+51.jpg",
+            "price": 2609.99
+        },
+        {
+            "id": 3,
+            "wheelname": "Volk TE37 OG Dash",
+            "description": "5x114.3 | 18x10.5 +22",
+            "image":"/assets/resources/Wheels/volkTE37.webp",
+            "price": 2900.99
+        },
+        {
+            "id": 4,
+            "wheelname": "WEDS KRANZE CERBERUS 1",
+            "description": "4x114.3 | 17X8.5 +31",
+            "image":"/assets/resources/Wheels/weds_kranze_cerberus.jpg",
+            "price": 1499.99
+        },
+        {
+            "id": 5,
+            "wheelname": "WORK VS-KF",
+            "description": "5X114.3 | 19X9.5 +39",
+            "image":"/assets/resources/Wheels/vs.webp",
+            "price": 1999.99
+        }          
+                 
+]

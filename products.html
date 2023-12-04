@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 333power. | Products</title>
+    <!--Folha de Estilo-->
+    <link rel="stylesheet" href="/assets/style/style.css">
+    <!--Ícones-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--BoxIcons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!--FavIcons-->
+    <link rel="shortcut icon" href="/assets/resources/Icones/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <style>
+        body{
+            background-image: url(/assets/resources/bg.png);
+            background-size: cover;
+            background-clip: padding-box;
+        }
+    </style>
+
+    <!-- Caixa de diálogo personalizada -->
+    <div id="dialog" style=" display: none; position: fixed; z-index: 200; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); border-radius: 5px;">
+        <div class = dialogbox style="background: #22222238; box-shadow: var(--shadow); backdrop-filter: blur(10px); margin: 15% auto; padding: 20px; border: 1px solid #af9210; width: 20%; transition: var(--trans-1); border-radius: 5px;">
+            <p style="color: #d4af0b;">Are you sure to delete this?</p>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+    <!-- End of caixa de diálogo-->
+
+    <!--Formulário de Edição-->
+     <div id="editForm" style="display: none; position: fixed; z-index: 200; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); border-radius: 5px;">
+        <form id="productEditForm" style="background: #22222238; box-shadow: var(--shadow); backdrop-filter: blur(10px); margin: 15% auto; padding: 20px; border: 1px solid #af9210; width: 20%; transition: var(--trans-1); border-radius: 5px;">
+          <label for="wheelname">Wheelname:</label><br>
+          <input type="text" id="wheelname" name="wheelname"><br>
+          <label for="price">Price:</label><br>
+          <input type="text" id="price" name="price"><br>
+          <label for="description">Description:</label><br>
+          <input type="text" id="description" name="description"><br>
+          <label for="image">Image URL:</label><br>
+          <input type="text" id="image" name="image"><br>
+          <input type="submit" value="Save edit">
+        </form>
+    </div>
+    <!--End of Edit Form-->
+      
+
+    <!--Header-->
+    <header class="header">
+        <a href="index.html" class="logo"><img src="/assets/resources/333powerlogo.png" alt=""></a>
+        <nav class="navbar">            
+            <a href="index.html">Home</a>
+            <a href="#sobre">About</a>
+            <a href="products.html">Products</a>
+            <a href="#sobre">Contact</a>     
+            <a href="manager.html">Manager</a>       
+        </nav>
+    <!-- Carrinho de Compras -->    
+    <div class="cart">
+        <i class="fa-solid fa-cart-shopping" id="cart"></i>
+        <span id="cart-count"></span>
+        <div id="cart-menu" style="display: none; position: absolute;">
+            <ul id="cart-items">
+                <!-- Aqui serão adicionados os itens do carrinho -->
+            </ul>
+            <div class="cart-end">
+                <div id="total-price"></div>    
+                <button id="checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+    <!-- End of Carrinho de Compras -->  
+    </header>
+    <!-- End Header -->
+
+    <!--Cards--> 
+    <div class="container" id="wheels-container"></div>
+    <!--End Cards -->
+
+    <!--Blur-->
+    <span class="blur"></span>
+    <!--End of Blur-->
+
+    <!--Back to Top-->
+    <div id="progress">
+        <span id="progress-value"><i class="fa-solid fa-arrow-up" style=""></i></span>
+    </div>
+    <!-- End of back to top --> 
+
+    <!-- Footer and Copy-->
+    <footer id="sobre">
+        <div class="container-footer">
+            <div class="row">
+                  <div class="col" id="company">
+                      <img src="/assets/resources/tiggologo.png" alt="" class="logo">
+                      <p>
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis omnis facere pariatur ea iure dolor. 
+                      </p>
+                      <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/stories/cosmustiggo"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                      </div>
+                  </div>
+
+                  <div class="col" id="services">
+                     <h3>Company</h3>
+                     <div class="links">
+                        <a href="#">Business</a>
+                        <a href="#">Partnership</a>
+                        <a href="#">Network</a>
+                        <a href="#">Sponsors</a>
+                     </div>
+                  </div>
+
+                  <div class="col" id="useful-links">
+                     <h3>About Us</h3>
+                     <div class="links">
+                        <a href="#">Blogs</a>
+                        <a href="#">Channels</a>
+                        <a href="#">Our Policy</a>
+                        <a href="#">Help</a>
+                     </div>
+                  </div>
+
+                  <div class="col" id="contact">
+                      <h3>Contact</h3>
+                      <div class="contact-details">
+                         <i class="fa fa-location"></i>
+                         <p>Rua Carlos Flores,<br> Bento Gonçalves - RS, BR</p>
+                      </div>
+                      <div class="contact-details">
+                         <i class="fa fa-phone"></i>
+                         <p>54999999999</p>
+                      </div>
+                  </div>
+            </div>
+    <div class="copyright">
+        Copyright © 2023 Tiago Simoni. All Rights Reserved.
+    </div>
+    </footer>
+    <!-- End of Footer and copy-->
+
+    <!--Script-->
+    <script src="/assets/script/moveToTop.js"></script>
+    <script src="app.js"></script>
+    <script>
+    //Scripts reservados para carregar produtos cadastrados no LocalStorage 
+       document.addEventListener('DOMContentLoaded', function() {
+       var container = document.getElementById('wheels-container');
+   
+       // Carregar produtos do localStorage
+       var products = JSON.parse(localStorage.getItem('products')) || [];
+   
+       // Para cada produto cadastrado no LocalStorage
+       products.forEach(function(item, index) {
+       // Criar um novo elemento de cartão
+            var card = document.createElement('div');
+            card.className = 'card';
+          
+            card.innerHTML = `
+            <img src="${item.image}" alt="${item.wheelname}">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <h4>$${item.price}</h4>
+            <button onclick="showEditForm(${index})"><i class="fa-solid fa-pencil"></i></button>
+            <button onclick="removerLocalStorage(${index})"><i class="fa-solid fa-trash"></i></button>
+            <button onclick="addToCart(${index})"><i class="fa-solid fa-cart-plus"></i> Buy now!</button>
+            `;
+                
+       container.appendChild(card);
+        });
+       });
+       function removerLocalStorage(index) {
+        // Carregar produtos do localStorage
+        var products = JSON.parse(localStorage.getItem('products')) || [];
+
+        // Remover o produto do array
+        products.splice(index, 1);
+
+        // Atualizar o localStorage
+        localStorage.setItem('products', JSON.stringify(products));
+
+        // Recarregar a página para atualizar a UI
+        location.reload();
+        }
+        
+
+        //Formulário de Edição
+        var editForm = document.getElementById('productEditForm');
+        editForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Pegue os novos dados do formulário
+            var newData = new FormData(editForm);
+
+            // Converta os dados do formulário em um objeto JavaScript
+            var newProduct = Object.fromEntries(newData);
+
+            // Carregue produtos existentes do localStorage
+            var products = JSON.parse(localStorage.getItem('products')) || [];
+
+            // Obter o ID do produto que estamos editando
+            var id = localStorage.getItem('editId');
+
+            // Encontrar o índice do produto com o ID correspondente
+            var index = products.findIndex(function(product) {
+                return product.id == id;
+            });
+
+            // Verificar se o produto com o ID foi encontrado
+            if (index !== -1) {
+                // Obter o produto pelo índice
+                var product = products[index];
+
+                // Substituir apenas o campo 'title'
+                product.title = newProduct.wheelname;
+
+                // Substituir os dados existentes pelos novos dados
+                Object.assign(product, newProduct);
+
+                // Salve a lista atualizada de produtos no localStorage
+                localStorage.setItem('products', JSON.stringify(products));
+
+                // Mostre uma mensagem de alerta
+                alert('Product updated successfully!');
+
+                // Forçar recarregamento da página
+                location.reload();
+
+                // Limpe o formulário
+                editForm.reset();
+
+                // Esconder o formulário
+                document.getElementById('editForm').style.display = 'none';
+
+                // Esconder a sobreposição
+                document.getElementById('blur-background').style.display = 'none';
+
+                // Forçar recarregamento da página
+                location.reload(true);
+            } else {
+                // Caso o produto não seja encontrado, exibir uma mensagem de erro
+                alert('Erro: Produto não encontrado!');
+            }
+        });
+    </script>
+</body>
+</html>
