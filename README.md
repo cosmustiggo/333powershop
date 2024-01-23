@@ -1,3 +1,5 @@
+Link: https://333power.netlify.app/
+
 **333PowerShop**
 *EN-US*: E-commerce with CRUD functionalities for college study and assessment 
 *PT-BR*: E-commerce com funcionalides CRUD com fins de estudo e avaliação na universidade.
